@@ -18,13 +18,14 @@ public class FloorSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnLocation = new Vector3(PreviousFloor.transform.position.x, PreviousFloor.transform.position.y, PreviousFloor.transform.position.z + 30);
+        SpawnLocation = new Vector3(PreviousFloor.transform.position.x, PreviousFloor.transform.position.y, PreviousFloor.transform.position.z + 28);
     }
 
     IEnumerator SpawnFloor()
     {
-        yield return new WaitForSeconds(5f);
-        LastSpawned = Instantiate(Floor, SpawnLocation, Quaternion.identity, FloorParent.transform);
+        yield return new WaitForSeconds(4.5f);
+        Quaternion rotation = Quaternion.Euler(0, 90, 90);
+        LastSpawned = Instantiate(Floor, SpawnLocation, rotation, FloorParent.transform);
         PreviousFloor = LastSpawned; 
         StartCoroutine(SpawnFloor());
     }
