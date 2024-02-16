@@ -32,6 +32,5 @@ public class Movement : MonoBehaviour
         }
         float HorizontalInput = Input.GetAxis("Horizontal");
         PlayerRb.AddForce(HorizontalInput * speed, 0, 0);
-        Debug.Log(PlayerRb.velocity);
     }
 }
