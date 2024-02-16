@@ -23,7 +23,7 @@ public class FloorSpawner : MonoBehaviour
 
     IEnumerator SpawnFloor()
     {
-        yield return new WaitForSeconds(4.5f);
+        yield return new WaitForSeconds(3.5f);
         Quaternion rotation = Quaternion.Euler(0, 90, 90);
         LastSpawned = Instantiate(Floor, SpawnLocation, rotation, FloorParent.transform);
         PreviousFloor = LastSpawned; 

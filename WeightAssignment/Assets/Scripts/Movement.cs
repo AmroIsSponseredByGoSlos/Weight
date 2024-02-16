@@ -6,6 +6,7 @@ public class Movement : MonoBehaviour
 {
     public GameObject Player;
     private Rigidbody PlayerRb;
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,8 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        PlayerRb.velocity = new Vector3(0, 0, 6);
+        PlayerRb.AddForce(0, 0, 33);
+        float HorizontalInput = Input.GetAxis("Horizontal");
+        PlayerRb.AddForce(HorizontalInput * speed, 0, 0);
     }
 }
