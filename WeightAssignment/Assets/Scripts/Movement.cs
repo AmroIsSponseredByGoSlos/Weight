@@ -26,10 +26,6 @@ public class Movement : MonoBehaviour
         {
             PlayerRb.AddForce(0, 0, 33);
         }
-        else
-        {
-            Debug.Log("Velocity is alot");
-        }
         float HorizontalInput = Input.GetAxis("Horizontal");
         PlayerRb.AddForce(HorizontalInput * speed, 0, 0);
     }
