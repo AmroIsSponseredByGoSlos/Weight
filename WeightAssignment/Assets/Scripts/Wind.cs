@@ -5,6 +5,9 @@ using UnityEngine;
 public class Wind : MonoBehaviour
 {
     private int Number;
+    public AudioSource LeftWindSource;
+    public AudioSource RightWindSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,14 @@ public class Wind : MonoBehaviour
     void OnTriggerEnter(Collider col)
     {
         Number = Random.Range(1, 3);
+        if (Number == 1)
+        {
+            LeftWindSource.Play();
+        }
+        else
+        {
+            RightWindSource.Play();
+        }
     }
 
     void OnTriggerStay(Collider col)
@@ -33,5 +44,11 @@ public class Wind : MonoBehaviour
         {
             RB.AddForce(-13, 0, 0);
         }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        LeftWindSource.Stop();
+        RightWindSource.Stop();
     }
 }
