@@ -5,6 +5,7 @@ using UnityEngine;
 public class CentreLine : MonoBehaviour
 {
     private GameObject Player;
+    public AudioSource Footsteps;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,16 @@ public class CentreLine : MonoBehaviour
         if (col.gameObject.name == "Player")
         {
             Debug.Log("Safety");
+            Footsteps.Play();
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if (col.gameObject.name == "Player")
+        {
+            Debug.Log("Danger");
+            Footsteps.Stop();
         }
     }
 }
