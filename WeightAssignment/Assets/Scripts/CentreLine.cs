@@ -15,7 +15,7 @@ public class CentreLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position = new Vector3(0, 3, Player.transform.position.z);
+        gameObject.transform.position = new Vector3(0, 160, Player.transform.position.z);
     }
 
     void OnTriggerStay(Collider col)

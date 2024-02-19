@@ -12,7 +12,7 @@ public class FloorSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnFloor());
-        PlaceToSpawn = 28;
+        PlaceToSpawn = 1450;
     }
 
     // Update is called once per frame
@@ -24,10 +24,10 @@ public class FloorSpawner : MonoBehaviour
     IEnumerator SpawnFloor()
     {
         yield return new WaitForSeconds(3.5f);
-        SpawnLocation = new Vector3(0, -0.13f, PlaceToSpawn);
+        SpawnLocation = new Vector3(0, -0, PlaceToSpawn);
         Quaternion rotation = Quaternion.Euler(0, 90, 90);
         Instantiate(Floor, SpawnLocation, rotation, FloorParent.transform);
-        PlaceToSpawn = PlaceToSpawn + 28;
+        PlaceToSpawn = PlaceToSpawn + 1400;
         StartCoroutine(SpawnFloor());
     }
 }

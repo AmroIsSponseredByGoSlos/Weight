@@ -38,11 +38,11 @@ public class Wind : MonoBehaviour
         Rigidbody RB = col.gameObject.GetComponent<Rigidbody>();
         if (Number == 1)
         {
-            RB.AddForce(13, 0, 0);
+            RB.AddForce(400, 0, 0);
         }
         else
         {
-            RB.AddForce(-13, 0, 0);
+            RB.AddForce(-400, 0, 0);
         }
     }
 

@@ -18,7 +18,7 @@ public class WindSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnLocation = new Vector3(0, 5, Player.transform.position.z + 16);
+        SpawnLocation = new Vector3(0, 250, Player.transform.position.z + 800);
     }
 
     IEnumerator SpawnWind()

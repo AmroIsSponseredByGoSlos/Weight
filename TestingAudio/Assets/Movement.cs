@@ -17,16 +17,14 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void FixedUpdate()
     {
-        if (PlayerRb.velocity.z < 420f)
-        {
-            PlayerRb.AddForce(0, 0, 250);
-        }
+       
         float HorizontalInput = Input.GetAxis("Horizontal");
-        PlayerRb.AddForce(HorizontalInput * speed, 0, 0);
+        float VerticalInput = Input.GetAxis("Vertical");
+        PlayerRb.AddForce(HorizontalInput * speed, 0, VerticalInput * speed);
     }
 }

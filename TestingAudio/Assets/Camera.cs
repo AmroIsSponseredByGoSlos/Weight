@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    private GameObject Player;
+    public GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +14,7 @@ public class Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Player.transform.position + new Vector3(0f, 60f, -90f); 
+        transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 20, Player.transform.position.z - 40);
         transform.LookAt(Player.transform);
     }
 }
