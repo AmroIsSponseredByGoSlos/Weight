@@ -11,6 +11,7 @@ public class DeathBarrier : MonoBehaviour
     public TextMeshProUGUI TimeText;
     public GameObject DeathCanvas;
     public GameObject Player;
+    public AudioSource Footsteps;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,8 @@ public class DeathBarrier : MonoBehaviour
     {
         if (col.gameObject.name == "Player")
         {
-            Time.timeScale = 0f; 
+            Time.timeScale = 0f;
+            Footsteps.Stop();
             DeathCanvas.SetActive(true);
             TimeText.text = $"You survived for {Seconds} seconds";
         }
