@@ -23,6 +23,14 @@ public class CentreLine : MonoBehaviour
         if (col.gameObject.name == "Player")
         {
             Debug.Log("Safety");
+        }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.name == "Player")
+        {
+            Debug.Log("Play that thing");
             Footsteps.Play();
         }
     }
